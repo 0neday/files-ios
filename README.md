@@ -7,18 +7,9 @@ Next-generation file browser for iOS.
  * System-wide Document Provider - open files in other apps
  * Go to Folder
  * Sorting options
- * RW ACCESS OVER THE FILESYSTEM YAY
- * Option to edit exiting files (WARNING DO NOT CLICK SAVE WHEN OPENING BINARIES, THEY WILL GET ERASED (TODO)
- * Option to create new files
- * ~~IPA -> https://github.com/jakeajames/files-ios/releases/~~ IPA IS BROKEN, WILL FIX SOON. Also, I will release a working Filza ipa with rw but can't post it here, as it is copyrighted. If you want that check my twitter (@jakeashacks)
+*  Get tfp0, root, and sandbox escape for iOS 9.3.x
  
- UPDATE: From my findings looks like is Cydia Imapctor the one which doesn't support my ipa. You'll have to use the xcodeproj. ~~It only works in Xcode 8, apparently. I'll update the code so it uses UIAlertControllers.~~ FIXED XCODE 9. Also, you have to link IOKit.tbd (take it from yalu) in Build Phases -> Link Bundle With Libraries
- 
- Coming soon:
- 
- - Filza jailed (no link here, illegal)
- - iFile jailed (no link here, illegal)
- - An open-source tool to inject the exploit on almost any ipa and make it run with full root and rw privileges (LEGAL)
+
  
 Screenshots
 =============
@@ -37,7 +28,5 @@ TODO
 CREDITS
 =============
 
-* Ian Beer (exploit)
-* theninjaprawn + Todesco + xerub (root rw)
+* Siguza ([PhoenixNonce](https://github.com/Siguza/PhoenixNonce))
 * steventroughtonsmith (file manager)
-* Jake James (small touches and made everything together)
