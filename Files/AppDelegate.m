@@ -11,6 +11,13 @@
 #import "FBFilesTableViewController.h"
 #import "FBColumnNavigationController.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
+#include "load_payload.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,6 +26,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+	
+		party_hard();
+    
+    printf(" ♫ KPP never bothered me anyway... ♫ \n");
+    sleep(2);
 	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.highcaffeinecontent.Files"];	
 	NSInteger sortingFilter = [defaults integerForKey:@"FBSortingFilter"];
 	
