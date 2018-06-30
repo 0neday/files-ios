@@ -29,9 +29,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	
-	struct utsname sysinfo;
-	uname(&sysinfo);
-	
 	// get osversion
 	int version_prop[2] = {CTL_KERN, KERN_OSVERSION};
 	char osversion[20];
@@ -44,8 +41,9 @@
 			printf(" ♫ KPP never bothered me anyway... ♫ \n");
 			sleep(2);
 	}
-
-	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.highcaffeinecontent.Files"];	
+	
+	
+	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.cn.njcit.files.hongs"];
 	NSInteger sortingFilter = [defaults integerForKey:@"FBSortingFilter"];
 	
 	self.window = [[UIWindow alloc] init];
@@ -79,7 +77,7 @@
 
 -(void)filterChanged:(UISegmentedControl *)sender
 {
-	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.highcaffeinecontent.Files"];
+	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.cn.njcit.files.hongs"];
 	
 	[defaults setInteger:sender.selectedSegmentIndex forKey:@"FBSortingFilter"];
 }
