@@ -16,7 +16,7 @@
 	if (self) {
 		
 		textView = [[UITextView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-		textView.editable = NO;
+		textView.editable = YES;
 		textView.backgroundColor = [UIColor whiteColor];
 		
 		imageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -33,9 +33,9 @@
 +(BOOL)canHandleExtension:(NSString *)fileExt
 {
 	if ((int)UI_USER_INTERFACE_IDIOM() != 4) // Don't use QuickLook for images on watchOS
-		return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"xcconfig"] );
+		return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"xcconfig"] || [fileExt isEqualToString:@"conf"] || [fileExt isEqualToString:@""] );
 
-	return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"png"] || [fileExt isEqualToString:@"xcconfig"] );
+	return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"png"] || [fileExt isEqualToString:@"xcconfig"] || [fileExt isEqualToString:@"conf"] || [fileExt isEqualToString:@""] );
 }
 
 -(void)loadFile:(NSString *)file
@@ -46,13 +46,13 @@
 		[textView setText:[d description]];
 		self.view = textView;
 	}
-	else if ([file.pathExtension isEqualToString:@"xcconfig"])
+	else if ([file.pathExtension isEqualToString:@"xcconfig"] || [file.pathExtension isEqualToString:@""] || [file.pathExtension isEqualToString:@"conf"])
 	{
 		NSString *d = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
 		[textView setText:d];
 		self.view = textView;
 	}
-	else
+	else if ([file.pathExtension isEqualToString:@"png"] )
 	{
 		imageView.image = [UIImage imageWithContentsOfFile:file];
 		self.view = imageView;

@@ -356,7 +356,7 @@
 		}
 		else
 		{
-			if ([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.highcaffeinecontent.Files.FilesDocumentProvider"])
+			if ([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"cn.njcit.files.hongs.999999999991"])
 			{
 				[[NSNotificationCenter defaultCenter] postNotificationName:@"FBPickedFileURL" object:[NSURL fileURLWithPath:newPath]];
 			}
