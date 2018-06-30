@@ -11,6 +11,15 @@
 #import "FBFilesTableViewController.h"
 #import "FBColumnNavigationController.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/utsname.h>
+#include "sys/sysctl.h"
+
+#include "load_payload.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,7 +28,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.cn.njcit.files.hongs"];	
+	
+	struct utsname sysinfo;
+	uname(&sysinfo);
+	
+	// get osversion
+	int version_prop[2] = {CTL_KERN, KERN_OSVERSION};
+	char osversion[20];
+	size_t version_prop_len = sizeof(osversion);
+	sysctl(version_prop, 2, osversion, &version_prop_len, NULL, 0);
+	
+	if (!strcmp(osversion, "13E234") || !strcmp(osversion, "13G36")) // add your osversion here
+	{
+			party_hard(); // exploit to get uid = 0
+			printf(" ♫ KPP never bothered me anyway... ♫ \n");
+			sleep(2);
+	}
+
+	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.highcaffeinecontent.Files"];	
 	NSInteger sortingFilter = [defaults integerForKey:@"FBSortingFilter"];
 	
 	self.window = [[UIWindow alloc] init];
@@ -53,7 +79,7 @@
 
 -(void)filterChanged:(UISegmentedControl *)sender
 {
-	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.cn.njcit.files.hongs"];
+	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.highcaffeinecontent.Files"];
 	
 	[defaults setInteger:sender.selectedSegmentIndex forKey:@"FBSortingFilter"];
 }

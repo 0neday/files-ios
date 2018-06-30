@@ -95,7 +95,7 @@
 
 -(void)sortFiles
 {
-	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.cn.njcit.files.hongs"];
+	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.highcaffeinecontent.Files"];
 	NSInteger sortingFilter = [defaults integerForKey:@"FBSortingFilter"];
 	
 	self.files = [self.files sortedArrayWithOptions:0 usingComparator:^NSComparisonResult(NSString* file1, NSString* file2) {
