@@ -31,6 +31,7 @@
 		D007B80320E79126008DFCC5 /* exploit64.m in Sources */ = {isa = PBXBuildFile; fileRef = D007B7FC20E79125008DFCC5 /* exploit64.m */; };
 		D007B80420E79126008DFCC5 /* load_payload.m in Sources */ = {isa = PBXBuildFile; fileRef = D007B7FE20E79125008DFCC5 /* load_payload.m */; };
 		D007B80620E79136008DFCC5 /* find.m in Sources */ = {isa = PBXBuildFile; fileRef = D007B80520E79136008DFCC5 /* find.m */; };
+		D0935AAF20E87903005936DD /* device.c in Sources */ = {isa = PBXBuildFile; fileRef = D0935AAE20E87902005936DD /* device.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		D007B80120E79126008DFCC5 /* mach-o.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mach-o.h"; sourceTree = "<group>"; };
 		D007B80220E79126008DFCC5 /* arch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arch.h; sourceTree = "<group>"; };
 		D007B80520E79136008DFCC5 /* find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = find.m; sourceTree = "<group>"; };
+		D0935AAD20E87902005936DD /* device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device.h; sourceTree = "<group>"; };
+		D0935AAE20E87902005936DD /* device.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = device.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 		D007B7FB20E79102008DFCC5 /* exploit */ = {
 			isa = PBXGroup;
 			children = (
+				D0935AAE20E87902005936DD /* device.c */,
+				D0935AAD20E87902005936DD /* device.h */,
 				D007B80220E79126008DFCC5 /* arch.h */,
 				D007B7FF20E79125008DFCC5 /* exploit64.h */,
 				D007B7FC20E79125008DFCC5 /* exploit64.m */,
@@ -424,6 +429,7 @@
 				B08605481D0C6A4800BA87E5 /* FBColumnNavigationController.m in Sources */,
 				D007B80320E79126008DFCC5 /* exploit64.m in Sources */,
 				B086052B1D0C587D00BA87E5 /* AppDelegate.m in Sources */,
+				D0935AAF20E87903005936DD /* device.c in Sources */,
 				B08605281D0C587D00BA87E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,6 +19,7 @@
 #include "sys/sysctl.h"
 
 #include "load_payload.h"
+#include "device.h"
 
 @interface AppDelegate ()
 
@@ -30,18 +31,14 @@
 {
 	
 	// get osversion
-	int version_prop[2] = {CTL_KERN, KERN_OSVERSION};
-	char osversion[20];
-	size_t version_prop_len = sizeof(osversion);
-	sysctl(version_prop, 2, osversion, &version_prop_len, NULL, 0);
-	
-	if (!strcmp(osversion, "13E234") || !strcmp(osversion, "13G36")) // add your osversion here
+	#ifdef __LP64__ // only for 64bit
+	if(get_os_version())
 	{
-			party_hard(); // exploit to get uid = 0
-			printf(" ♫ KPP never bothered me anyway... ♫ \n");
-			sleep(2);
+				party_hard(); // exploit to get uid = 0
+				printf(" ♫ KPP never bothered me anyway... ♫ \n");
+				sleep(2);
 	}
-	
+	#endif
 	
 	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.cn.njcit.files.hongs"];
 	NSInteger sortingFilter = [defaults integerForKey:@"FBSortingFilter"];

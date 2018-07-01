@@ -16,7 +16,7 @@
 	if (self) {
 		
 		textView = [[UITextView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-		textView.editable = YES;
+		textView.editable = NO;
 		textView.backgroundColor = [UIColor whiteColor];
 		
 		imageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -46,7 +46,7 @@
 		[textView setText:[d description]];
 		self.view = textView;
 	}
-	else if ([file.pathExtension isEqualToString:@"xcconfig"] || [file.pathExtension isEqualToString:@""] || [file.pathExtension isEqualToString:@"conf"])
+	else if ([file.pathExtension isEqualToString:@"xcconfig"] || [file.pathExtension isEqualToString:@"conf"] || [file.pathExtension isEqualToString:@""])
 	{
 		NSString *d = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
 		[textView setText:d];
