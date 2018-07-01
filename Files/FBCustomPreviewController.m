@@ -33,9 +33,9 @@
 +(BOOL)canHandleExtension:(NSString *)fileExt
 {
 	if ((int)UI_USER_INTERFACE_IDIOM() != 4) // Don't use QuickLook for images on watchOS
-		return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"xcconfig"] || [fileExt isEqualToString:@"conf"] || [fileExt isEqualToString:@""] );
+		return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"xcconfig"] || [fileExt isEqualToString:@"conf"] || [fileExt isEqualToString:@""] || [fileExt isEqualToString:@"passwd"]);
 
-	return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"png"] || [fileExt isEqualToString:@"xcconfig"] || [fileExt isEqualToString:@"conf"] || [fileExt isEqualToString:@""] );
+	return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"png"] || [fileExt isEqualToString:@"xcconfig"] || [fileExt isEqualToString:@"conf"] || [fileExt isEqualToString:@""] || [fileExt isEqualToString:@"passwd"] );
 }
 
 -(void)loadFile:(NSString *)file
@@ -46,7 +46,7 @@
 		[textView setText:[d description]];
 		self.view = textView;
 	}
-	else if ([file.pathExtension isEqualToString:@"xcconfig"] || [file.pathExtension isEqualToString:@"conf"] || [file.pathExtension isEqualToString:@""])
+	else if ([file.pathExtension isEqualToString:@"xcconfig"] || [file.pathExtension isEqualToString:@"conf"] || [file.pathExtension isEqualToString:@""] || [file.pathExtension isEqualToString:@"passwd"])
 	{
 		NSString *d = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
 		[textView setText:d];
