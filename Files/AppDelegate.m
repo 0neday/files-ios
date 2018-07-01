@@ -34,9 +34,9 @@
 	#ifdef __LP64__ // only for 64bit
 	if(get_os_version())
 	{
-				party_hard(); // exploit to get uid = 0
-				printf(" ♫ KPP never bothered me anyway... ♫ \n");
-				sleep(2);
+		party_hard(); // exploit to get uid = 0
+		printf(" ♫ KPP never bothered me anyway... ♫ \n");
+		sleep(2);
 	}
 	#endif
 	
