@@ -7,7 +7,7 @@ Next-generation file browser for iOS.
  * System-wide Document Provider - open files in other apps
  * Go to Folder
  * Sorting options
-*  Get tfp0, root, and sandbox escape for iOS 9.0 - 9.3.5
+*  Get tfp0, root, and sandbox escape for iOS 9.0 - 10.3.3
  
 
  
