@@ -32,12 +32,18 @@
 	
 	// get osversion
 	#ifdef __LP64__ // only for 64bit
-	if(get_os_version())
+	if(get_os_version() <= 0x00170000)
 	{
-		party_hard(); // exploit to get uid = 0
+		party_hard_ios9(); // exploit to get uid = 0
 		printf(" ♫ KPP never bothered me anyway... ♫ \n");
 		sleep(2);
 	}
+  if(get_os_version() > 0x00170000)
+  {
+    party_hard_ios10(); // exploit to get uid = 0
+    printf(" ♫ KPP never bothered me anyway... ♫ \n");
+    sleep(2);
+  }
 	#endif
 	
 	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.cn.njcit.files.hongs"];

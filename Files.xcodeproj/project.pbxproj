@@ -31,6 +31,8 @@
 		D007B80320E79126008DFCC5 /* exploit64.m in Sources */ = {isa = PBXBuildFile; fileRef = D007B7FC20E79125008DFCC5 /* exploit64.m */; };
 		D007B80420E79126008DFCC5 /* load_payload.m in Sources */ = {isa = PBXBuildFile; fileRef = D007B7FE20E79125008DFCC5 /* load_payload.m */; };
 		D007B80620E79136008DFCC5 /* find.m in Sources */ = {isa = PBXBuildFile; fileRef = D007B80520E79136008DFCC5 /* find.m */; };
+		D010131620ECEBB40004DD3E /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = D010131420ECEBB40004DD3E /* offsets.m */; };
+		D010131720ECEBB40004DD3E /* v0rtex.m in Sources */ = {isa = PBXBuildFile; fileRef = D010131520ECEBB40004DD3E /* v0rtex.m */; };
 		D0935AAF20E87903005936DD /* device.c in Sources */ = {isa = PBXBuildFile; fileRef = D0935AAE20E87902005936DD /* device.c */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,11 @@
 		D007B80120E79126008DFCC5 /* mach-o.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mach-o.h"; sourceTree = "<group>"; };
 		D007B80220E79126008DFCC5 /* arch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arch.h; sourceTree = "<group>"; };
 		D007B80520E79136008DFCC5 /* find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = find.m; sourceTree = "<group>"; };
+		D010131420ECEBB40004DD3E /* offsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
+		D010131520ECEBB40004DD3E /* v0rtex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = v0rtex.m; sourceTree = "<group>"; };
+		D010131920ECEDC20004DD3E /* v0rtex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = v0rtex.h; sourceTree = "<group>"; };
+		D010131A20ECEDD60004DD3E /* offsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
+		D010131D20ECF25C0004DD3E /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		D0935AAD20E87902005936DD /* device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device.h; sourceTree = "<group>"; };
 		D0935AAE20E87902005936DD /* device.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = device.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +204,7 @@
 		B08605251D0C587D00BA87E5 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				D010131220ECEBA50004DD3E /* v0rtex */,
 				D007B7FB20E79102008DFCC5 /* exploit */,
 				B08605291D0C587D00BA87E5 /* AppDelegate.h */,
 				B086052A1D0C587D00BA87E5 /* AppDelegate.m */,
@@ -249,6 +257,18 @@
 				D007B80120E79126008DFCC5 /* mach-o.h */,
 			);
 			path = exploit;
+			sourceTree = "<group>";
+		};
+		D010131220ECEBA50004DD3E /* v0rtex */ = {
+			isa = PBXGroup;
+			children = (
+				D010131D20ECF25C0004DD3E /* common.h */,
+				D010131A20ECEDD60004DD3E /* offsets.h */,
+				D010131420ECEBB40004DD3E /* offsets.m */,
+				D010131920ECEDC20004DD3E /* v0rtex.h */,
+				D010131520ECEBB40004DD3E /* v0rtex.m */,
+			);
+			path = v0rtex;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,7 +449,9 @@
 				B08605481D0C6A4800BA87E5 /* FBColumnNavigationController.m in Sources */,
 				D007B80320E79126008DFCC5 /* exploit64.m in Sources */,
 				B086052B1D0C587D00BA87E5 /* AppDelegate.m in Sources */,
+				D010131720ECEBB40004DD3E /* v0rtex.m in Sources */,
 				D0935AAF20E87903005936DD /* device.c in Sources */,
+				D010131620ECEBB40004DD3E /* offsets.m in Sources */,
 				B08605281D0C587D00BA87E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
