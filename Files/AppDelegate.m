@@ -34,13 +34,18 @@
 	#ifdef __LP64__ // only for 64bit
 	if(get_os_version() <= 0x00170000)
 	{
-		party_hard_ios9(); // exploit to get uid = 0
+    if(party_hard_ios9()){ // exploit to get uid = 0
+        exit(0);
+    }
 		printf(" ♫ KPP never bothered me anyway... ♫ \n");
 		sleep(2);
 	}
   if(get_os_version() > 0x00170000)
   {
-    party_hard_ios10(); // exploit to get uid = 0
+
+    if(party_hard_ios10()){ // exploit to get uid = 0
+        exit(0);
+    }
     printf(" ♫ KPP never bothered me anyway... ♫ \n");
     sleep(2);
   }
